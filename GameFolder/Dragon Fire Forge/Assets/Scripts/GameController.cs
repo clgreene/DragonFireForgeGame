@@ -22,11 +22,23 @@ public class GameController : MonoBehaviour
     public GameObject WeaponInfo;
     public GameObject WeaponDisplay;
     public GameObject CreditsScreen;
+    public GameObject TutorialOption;
 
     public void NewGame()
     {
         HomeScreen.SetActive(false);
-        SaveSlotScreen.SetActive(true);
+        TutorialOption.SetActive(true);
     }
 
+    public void tutorial()
+    {
+        TutorialOption.SetActive(false);
+        ForgeScreen.SetActive(true);
+    }
+
+    public void noTutorial()
+    {
+        TutorialOption.SetActive(false);
+        ForgeScreen.SetActive(true);
+    }
 }
