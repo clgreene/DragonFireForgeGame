@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 
 [CreateAssetMenu]
-public class StringListOperator : ScriptableObject
+public class StringListOperator : MonoBehaviour
 {
 
     //establishing the dialogue #, a currentList for to load into the text, and all the available dialogue options
@@ -28,7 +28,7 @@ public class StringListOperator : ScriptableObject
     private int i;
 
     //Logic for which dialogue option is loaded via switch statement
-    public void SetStringList()
+    public void SetDialogueList()
     {
         
             switch (dialogue.value)
@@ -53,7 +53,7 @@ public class StringListOperator : ScriptableObject
     }
 
     //cycle through statement and update the returnValue as you go
-    public void GetNextString()
+    public void GetNextDialogue()
     {
         if (Input.GetMouseButtonDown(0) && i < currentList.stringList.Count - 1)
         {
