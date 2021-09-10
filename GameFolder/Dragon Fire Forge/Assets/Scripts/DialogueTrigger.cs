@@ -10,12 +10,12 @@ public class DialogueTrigger : MonoBehaviour
 {
 
 	//establishing Unity Events for dialogue events
-	public UnityEvent TriggerCycleEvent, TriggerUpdateEvent, TriggerExitEvent, TriggerSetEvent;
+	public UnityEvent TriggerCycleEvent, TriggerExitEvent, TriggerSetEvent;
 
 
 
 	//Setting the correct dialogue for where you're at in the game.
-	private void startDialogue()
+	public void startDialogue()
 	{
 		TriggerSetEvent.Invoke();
 		
@@ -23,17 +23,17 @@ public class DialogueTrigger : MonoBehaviour
 
 
 	//Cycling through and updating the UI with the dialogue loaded in from above;
-	private void cycleDialogue()
+	public void cycleDialogue()
 	{
 		
 		TriggerCycleEvent.Invoke();
-		TriggerUpdateEvent.Invoke();
+		
 		
 	}
 
 
 	//resetting dialogue to begining of cycle
-	private void endDialogue()
+	public void endDialogue()
 	{
 		TriggerExitEvent.Invoke();
 	}

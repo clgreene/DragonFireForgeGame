@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: TutorialDial
   m_EditorClassIdentifier: 
   stringList:
-  - 
-  - 
-  - 
-  - 
+  - Welcome to the Dragonfire Forge!
+  - I've decided to retire, and it looks like you get to replace me.
+  - The Dragonfire Forge is the last stop before the heros of this realm set out
+    to fight evil.
+  - As such, it is imperative that you know what you're doing.
   - 

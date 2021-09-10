@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 //This is a brain-class script that organizes and loads in correct dialogue for an NPCs dialogue trigger scripts. It needs the DialogueTrigger script, IntData and StringListData Scriptable Objects
 
-
-[CreateAssetMenu]
 public class StringListOperator : MonoBehaviour
 {
 
@@ -24,11 +22,11 @@ public class StringListOperator : MonoBehaviour
     public StringListData listNine;
 
     //establishing a returnValue string for dialogue statements, and an integer that will cycle through all statements in a single dialogue option
-    private string returnValue;
-    private int i;
+    public string returnValue;
+    public int i = 0;
 
     //Logic for which dialogue option is loaded via switch statement
-    public void SetDialogueList()
+    public void SetDialogueList(Text obj)
     {
         
             switch (dialogue.value)
@@ -38,7 +36,7 @@ public class StringListOperator : MonoBehaviour
                     break;
                 case 2:
                     currentList = listTwo;
-                    Debug.Log("HEY");
+                    
                     break;
                 case 3:
                     currentList = listThree;
@@ -50,23 +48,31 @@ public class StringListOperator : MonoBehaviour
                     currentList = listFive;
                     break;
             }
+
+        returnValue = currentList.stringList[i];
+
+        obj.text = returnValue;
+
     }
 
     //cycle through statement and update the returnValue as you go
-    public void GetNextDialogue()
+    public void GetNextDialogue(Text obj)
     {
-        if (Input.GetMouseButtonDown(0) && i < currentList.stringList.Count - 1)
+        if (i >= currentList.stringList.Count - 1)
+        {
+            ExitTextUI(obj);
+        }
+
+        else
         {
             i = (i + 1);
+
+            returnValue = currentList.stringList[i];
+
+            obj.text = returnValue;
         }
-        returnValue = currentList.stringList[i];
 
-    }
 
-    //setting canvas text to return Value text
-    public void SetTextUIToValue(Text obj)
-    {
-        obj.text = returnValue;
     }
 
     //resetting dialogue text to first text option

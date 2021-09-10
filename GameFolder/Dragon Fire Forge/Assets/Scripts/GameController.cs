@@ -8,13 +8,13 @@ public class GameController : MonoBehaviour
     public GameObject HomeScreen;
     public GameObject SaveSlotScreen;
     public GameObject LoadGameScreen;
-    public GameObject ForgeScreen;
-    public GameObject SmeltScreen;
-    public GameObject QuenchScreen;
+    //public GameObject ForgeScreen;
+    //public GameObject SmeltScreen;
+    //public GameObject QuenchScreen;
     public GameObject Dialogue;
-    public GameObject Map;
-    public GameObject Contracts;
-    public GameObject ForgeGame;
+    //public GameObject Map;
+    //public GameObject Contracts;
+    //public GameObject ForgeGame;
     public GameObject SmeltGame;
     public GameObject QuenchGame;
     public GameObject WeaponSelection;
@@ -33,12 +33,13 @@ public class GameController : MonoBehaviour
     public void tutorial()
     {
         TutorialOption.SetActive(false);
-        ForgeScreen.SetActive(true);
+        //ForgeScreen.SetActive(true);
+        Dialogue.SetActive(true);
     }
 
     public void noTutorial()
     {
         TutorialOption.SetActive(false);
-        ForgeScreen.SetActive(true);
+        //ForgeScreen.SetActive(true);
     }
 }
